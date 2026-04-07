@@ -241,6 +241,13 @@
             transform: translateY(-10px);
         }
 
+        .symbol-img {
+            height: 120px;
+            width: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
         /* Flaga CSS */
         .css-flag {
             width: 150px;
@@ -250,19 +257,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             border: 1px solid #ddd;
         }
-
-        /* Szachownica Lotnicza CSS - Poprawiona */
-        .css-szachownica {
-            width: 120px;
-            height: 120px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin: 0 auto 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .sz-box { width: 100%; height: 100%; }
-        .sz-white { background: white; border: 5px solid var(--primary-red); }
-        .sz-red { background: var(--primary-red); border: 5px solid white; }
 
         /* --- Sekcja Kontakt --- */
         .contact-box {
@@ -404,7 +398,7 @@
         <h2 class="section-title">Nasze Symbole</h2>
         <div class="symbols-grid">
             <div class="symbol-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/500px-Herb_Polski.svg.png" alt="Godło Polski" style="height: 120px; width: auto; margin-bottom: 20px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/500px-Herb_Polski.svg.png" alt="Godło Polski" class="symbol-img">
                 <h3>Godło Polski</h3>
                 <p>Orzeł Biały w koronie na czerwonym tle. Zgodnie z legendą, założyciel państwa polskiego, Lech, ujrzał białego orła na tle zachodzącego słońca i postanowił założyć tam stolicę – Gniezno.</p>
             </div>
@@ -414,14 +408,9 @@
                 <p>Biel i czerwień. Biel symbolizuje czystość, lojalność i pokorę. Czerwień to miłość, odwaga, waleczność i poświęcenie. Zostały oficjalnie uznane za barwy narodowe w 1831 roku.</p>
             </div>
             <div class="symbol-card">
-                <div class="css-szachownica">
-                    <div class="sz-box sz-red"></div>
-                    <div class="sz-box sz-white"></div>
-                    <div class="sz-box sz-white"></div>
-                    <div class="sz-box sz-red"></div>
-                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Polish_Air_Force_checkerboard.svg/512px-Polish_Air_Force_checkerboard.svg.png" alt="Szachownica Lotnicza" class="symbol-img">
                 <h3>Szachownica Lotnicza</h3>
-                <p>Znak rozpoznawczy Sił Powietrznych RP. Początkowo osobisty znak pilota Stefana Steca. W 1993 roku zmieniono układ barw (obrócono o 90 stopni), by zgadzał się z zasadami heraldyki.</p>
+                <p>Znak rozpoznawczy Sił Powietrznych RP. Początkowo osobisty znak pilota Stefana Steca. Od 1993 roku używamy wzoru z czerwonym polem w lewym górnym rogu i obwódkami.</p>
             </div>
         </div>
     </section>
@@ -484,7 +473,7 @@
             <i class="fab fa-twitter"></i>
             <i class="fab fa-youtube"></i>
         </div>
-        <p>&copy; 2024 Projekt "JestemPatriotą". Stworzono z pasją do Polski.</p>
+        <p>&copy; 2026 Projekt "JestemPatriotą". Stworzono z pasją do Polski.</p>
         <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Kod projektu wykonany w celach edukacyjnych i patriotycznych.</p>
     </footer>
 
@@ -510,8 +499,8 @@
             showSlide(currentSlide);
         }
 
-        // --- Automatyczny slider co 12 sekund (zmieniono z 5 sekund) ---
-        setInterval(nextSlide, 12000);
+        // --- Automatyczny slider co 15 sekund (bardzo wolno, aby zdążyć przeczytać) ---
+        setInterval(nextSlide, 15000);
 
         // --- Obsługa suwaka dumy ---
         function updatePride(val) {
@@ -523,7 +512,7 @@
 
         // --- Płynne przewijanie z poprawką dla nawigacji (offset) ---
         function scrollToSection(id) {
-            event.preventDefault(); // Zapobiega domyślnemu skokowi linku
+            event.preventDefault(); 
             const element = document.getElementById(id);
             const navHeight = document.querySelector('nav').offsetHeight;
             const elementPosition = element.getBoundingClientRect().top;
