@@ -142,7 +142,7 @@
             box-shadow: 0 15px 30px rgba(220, 20, 60, 0.5);
         }
 
-        /* --- Ogólne style dla sekcji --- */
+        /* --- Sekcje Treści --- */
         .content-section {
             padding: 100px 50px;
             background: white;
@@ -157,41 +157,6 @@
             font-size: 2.5rem;
             margin-bottom: 60px;
             color: var(--dark-text);
-        }
-
-        /* --- Ciekawostki Slider --- */
-        .slider-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            height: 400px;
-        }
-
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.5s ease;
-            padding: 50px;
-            background: var(--soft-gray);
-            border: 2px solid #eee;
-            opacity: 0;
-            text-align: center;
-        }
-
-        .slide.active {
-            opacity: 1;
-        }
-
-        .slide-content i {
-            font-size: 4rem;
-            color: var(--primary-red);
-            margin-bottom: 20px;
         }
 
         /* --- Sekcja Historia --- */
@@ -209,11 +174,6 @@
             border-left: 5px solid var(--primary-red);
             border-radius: 0 15px 15px 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .history-card h3 {
-            color: var(--primary-red);
-            margin-bottom: 10px;
         }
 
         /* --- Sekcja Symbole --- */
@@ -244,8 +204,8 @@
         .symbol-img {
             height: 120px;
             width: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+            margin-bottom: 25px;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
         }
 
         /* Flaga CSS */
@@ -253,9 +213,44 @@
             width: 150px;
             height: 100px;
             background: linear-gradient(to bottom, white 50%, var(--primary-red) 50%);
-            margin: 0 auto 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin: 0 auto 25px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
             border: 1px solid #ddd;
+        }
+
+        /* --- Ciekawostki Slider --- */
+        .slider-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            height: 400px;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.8s ease-in-out;
+            padding: 50px;
+            background: var(--soft-gray);
+            border: 2px solid #eee;
+            opacity: 0;
+            text-align: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-content i {
+            font-size: 4rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
         }
 
         /* --- Sekcja Kontakt --- */
@@ -270,24 +265,13 @@
             border-top: 5px solid var(--primary-red);
         }
 
-        .contact-box i {
-            font-size: 3rem;
-            color: var(--primary-red);
-            margin-bottom: 20px;
-        }
-
         .contact-box a {
             display: inline-block;
             margin-top: 15px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            color: var(--dark-text);
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .contact-box a:hover {
             color: var(--primary-red);
+            text-decoration: none;
         }
 
         /* --- Suwaki Interaktywne --- */
@@ -308,26 +292,11 @@
         footer {
             background: #111;
             color: white;
-            padding: 80px 50px 20px;
+            padding: 50px 20px;
             text-align: center;
         }
 
-        .social-icons {
-            margin-bottom: 30px;
-        }
-
-        .social-icons i {
-            font-size: 1.5rem;
-            margin: 0 15px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .social-icons i:hover {
-            color: var(--primary-red);
-        }
-
-        /* --- Animacje i Responsywność --- */
+        /* --- Animacje --- */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-50px); }
             to { opacity: 1; transform: translateY(0); }
@@ -335,9 +304,8 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            nav { padding: 20px; flex-direction: column; gap: 15px; }
-            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .contact-box a { font-size: 1.2rem; }
+            nav { padding: 15px; flex-direction: column; }
+            .nav-links { gap: 15px; margin-top: 10px; }
         }
     </style>
 </head>
@@ -359,58 +327,38 @@
     <section class="hero" id="start">
         <div class="flag-bar"></div>
         <h1>Polska to My</h1>
-        <p>Odkryj piękno polskiej kultury, siłę naszej historii i dumę z bycia patriotą w XXI wieku.</p>
+        <p>Odkryj piękno polskiej kultury i siłę naszej historii.</p>
         <button class="btn-main" onclick="scrollToSection('historia')">Poznaj Historię</button>
     </section>
 
     <section class="content-section" id="historia">
         <h2 class="section-title">Historia Polski</h2>
         <div class="history-grid">
-            <div class="history-card">
-                <h3>966 r.</h3>
-                <strong>Chrzest Polski</strong>
-                <p>Mieszko I przyjmuje chrzest, wprowadzając Polskę w krąg kultury zachodnioeuropejskiej i chrześcijańskiej.</p>
-            </div>
-            <div class="history-card">
-                <h3>1569 r.</h3>
-                <strong>Unia Lubelska</strong>
-                <p>Powstaje Rzeczpospolita Obojga Narodów – jedno z największych i najpotężniejszych państw w Europie tamtych czasów.</p>
-            </div>
-            <div class="history-card">
-                <h3>1791 r.</h3>
-                <strong>Konstytucja 3 Maja</strong>
-                <p>Próba ratowania ojczyzny poprzez uchwalenie pierwszej w Europie nowoczesnej ustawy zasadniczej.</p>
-            </div>
-            <div class="history-card">
-                <h3>1918 r.</h3>
-                <strong>Odzyskanie Niepodległości</strong>
-                <p>Po 123 latach zaborów Polska wraca na mapy świata dzięki wysiłkowi całego narodu i wybitnych ojców niepodległości.</p>
-            </div>
-            <div class="history-card">
-                <h3>1989 r.</h3>
-                <strong>Narodziny Wolności</strong>
-                <p>Ruch "Solidarność" doprowadza do upadku komunizmu, otwierając drogę do wolnej, demokratycznej Polski.</p>
-            </div>
+            <div class="history-card"><h3>966 r.</h3><strong>Chrzest Polski</strong><p>Początek państwowości i wejście do kultury zachodniej.</p></div>
+            <div class="history-card"><h3>1410 r.</h3><strong>Grunwald</strong><p>Wielkie zwycięstwo nad Zakonem Krzyżackim.</p></div>
+            <div class="history-card"><h3>1791 r.</h3><strong>Konstytucja</strong><p>Pierwsza w Europie nowoczesna ustawa zasadnicza.</p></div>
+            <div class="history-card"><h3>1918 r.</h3><strong>Wolność</strong><p>Powrót Polski na mapy świata po 123 latach.</p></div>
+            <div class="history-card"><h3>1989 r.</h3><strong>Solidarność</strong><p>Upadek komunizmu i narodziny nowej demokracji.</p></div>
         </div>
     </section>
 
     <section class="content-section bg-gray" id="symbole">
-        <h2 class="section-title">Nasze Symbole</h2>
+        <h2 class="section-title">Symbole Narodowe</h2>
         <div class="symbols-grid">
             <div class="symbol-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/500px-Herb_Polski.svg.png" alt="Godło Polski" class="symbol-img">
                 <h3>Godło Polski</h3>
-                <p>Orzeł Biały w koronie na czerwonym tle. Zgodnie z legendą, założyciel państwa polskiego, Lech, ujrzał białego orła na tle zachodzącego słońca i postanowił założyć tam stolicę – Gniezno.</p>
+                <p>Orzeł Biały w złotej koronie na czerwonym polu, zwrócony w prawo.</p>
             </div>
             <div class="symbol-card">
                 <div class="css-flag"></div>
                 <h3>Flaga Państwowa</h3>
-                <p>Biel i czerwień. Biel symbolizuje czystość, lojalność i pokorę. Czerwień to miłość, odwaga, waleczność i poświęcenie. Zostały oficjalnie uznane za barwy narodowe w 1831 roku.</p>
+                <p>Biel symbolizuje czystość, czerwień krew przelaną za ojczyznę.</p>
             </div>
             <div class="symbol-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Polish_Air_Force_checkerboard.svg/512px-Polish_Air_Force_checkerboard.svg.png" alt="Szachownica Lotnicza" class="symbol-img">
                 <h3>Szachownica Lotnicza</h3>
-                <p>Znak rozpoznawczy Sił Powietrznych RP. Początkowo osobisty znak pilota Stefana Steca. Od 1993 roku używamy wzoru z czerwonym polem w lewym górnym rogu i obwódkami.</p>
+                <p>Znak rozpoznawczy Sił Powietrznych RP. Dumnie noszony na polskich skrzydłach.</p>
             </div>
         </div>
     </section>
@@ -422,21 +370,21 @@
                 <div class="slide-content">
                     <i class="fas fa-language"></i>
                     <h3>Najtrudniejszy język?</h3>
-                    <p>Język polski jest często zaliczany do jednego z najtrudniejszych języków do nauki na świecie ze względu na skomplikowaną gramatykę, przypadki i wymowę.</p>
+                    <p>Polszczyzna jest uważana za jeden z najtrudniejszych języków świata przez skomplikowaną deklinację i wymowę.</p>
                 </div>
             </div>
             <div class="slide">
                 <div class="slide-content">
                     <i class="fas fa-microscope"></i>
                     <h3>Nobliści</h3>
-                    <p>Maria Skłodowska-Curie jest jedyną kobietą, która otrzymała Nagrodę Nobla dwa razy, i jedynym człowiekiem, który otrzymał ją w dwóch różnych dziedzinach nauk przyrodniczych.</p>
+                    <p>Maria Skłodowska-Curie to jedyna osoba na świecie, która dostała dwa Noble w dwóch różnych naukach przyrodniczych.</p>
                 </div>
             </div>
             <div class="slide">
                 <div class="slide-content">
-                    <i class="fas fa-tree"></i>
-                    <h3>Puszcza Białowieska</h3>
-                    <p>W Polsce znajduje się ostatni na niżu Europy las pierwotny, w którym żyje największa na świecie populacja żubra - króla puszczy.</p>
+                    <i class="fas fa-mountain"></i>
+                    <h3>Pustynia w Polsce?</h3>
+                    <p>Pustynia Błędowska to największy w Europie Środkowej obszar lotnych piasków, zwana "Polską Saharą".</p>
                 </div>
             </div>
         </div>
@@ -448,37 +396,25 @@
 
     <section class="interactive-range">
         <h2>Jak bardzo czujesz się dziś dumny?</h2>
-        <p>Przesuń suwak, aby wyrazić swoją dumę z ojczyzny!</p>
         <input type="range" min="0" max="100" value="50" id="prideRange" oninput="updatePride(this.value)">
         <h3 id="prideText">Czuję się solidnie! (50%)</h3>
     </section>
 
     <section class="content-section bg-gray" id="kontakt">
-        <h2 class="section-title">Skontaktuj się z nami</h2>
+        <h2 class="section-title">Kontakt</h2>
         <div class="contact-box">
-            <i class="fas fa-envelope-open-text"></i>
-            <h3>Masz pytania lub pomysły na rozwój strony?</h3>
-            <p>Napisz do nas bezpośrednio na adres e-mail:</p>
+            <i class="fas fa-envelope-open-text" style="font-size: 3rem; color: var(--primary-red); margin-bottom: 20px;"></i>
+            <h3>Masz pytania? Napisz do nas!</h3>
             <a href="mailto:jestempatriota.pll@gmail.com">jestempatriota.pll@gmail.com</a>
         </div>
     </section>
 
     <footer>
-        <div class="logo" style="justify-content: center; margin-bottom: 30px; color: white;">
-            <i class="fas fa-eagle"></i> JESTEM PATRIOTĄ
-        </div>
-        <div class="social-icons">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-youtube"></i>
-        </div>
-        <p>&copy; 2026 Projekt "JestemPatriotą". Stworzono z pasją do Polski.</p>
-        <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Kod projektu wykonany w celach edukacyjnych i patriotycznych.</p>
+        <p>&copy; 2026 Projekt "JestemPatriotą". Chwała Bohaterom!</p>
     </footer>
 
     <script>
-        // --- Obsługa Slidera ---
+        // Slider - ZMIENIONO NA 15 SEKUND (15000 ms)
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
 
@@ -489,20 +425,12 @@
             slides[currentSlide].classList.add('active');
         }
 
-        function nextSlide() {
-            currentSlide++;
-            showSlide(currentSlide);
-        }
+        function nextSlide() { currentSlide++; showSlide(currentSlide); }
+        function prevSlide() { currentSlide--; showSlide(currentSlide); }
+        
+        setInterval(nextSlide, 15000); // 15 sekund na przeczytanie
 
-        function prevSlide() {
-            currentSlide--;
-            showSlide(currentSlide);
-        }
-
-        // --- Automatyczny slider co 15 sekund (bardzo wolno, aby zdążyć przeczytać) ---
-        setInterval(nextSlide, 15000);
-
-        // --- Obsługa suwaka dumy ---
+        // Suwak dumy
         function updatePride(val) {
             const text = document.getElementById('prideText');
             if(val < 30) text.innerText = `Budzę w sobie siłę! (${val}%)`;
@@ -510,31 +438,16 @@
             else text.innerText = `Duma mnie rozpiera! 🇵🇱 (${val}%)`;
         }
 
-        // --- Płynne przewijanie z poprawką dla nawigacji (offset) ---
+        // Przewijanie
         function scrollToSection(id) {
-            event.preventDefault(); 
+            event.preventDefault();
             const element = document.getElementById(id);
             const navHeight = document.querySelector('nav').offsetHeight;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - navHeight;
-
             window.scrollTo({
-                top: offsetPosition,
+                top: element.offsetTop - navHeight,
                 behavior: "smooth"
             });
         }
-
-        // --- Efekt scrollowania Menu ---
-        window.onscroll = function() {
-            const nav = document.querySelector('nav');
-            if (window.pageYOffset > 50) {
-                nav.style.padding = "10px 50px";
-                nav.style.background = "rgba(255, 255, 255, 0.98)";
-            } else {
-                nav.style.padding = "20px 50px";
-                nav.style.background = "rgba(255, 255, 255, 0.95)";
-            }
-        };
     </script>
 </body>
 </html>
