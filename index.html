@@ -142,18 +142,24 @@
             box-shadow: 0 15px 30px rgba(220, 20, 60, 0.5);
         }
 
-        /* --- Sekcja Ciekawostek (Slider) --- */
-        .curiosities {
+        /* --- Ogólne style dla sekcji --- */
+        .content-section {
             padding: 100px 50px;
             background: white;
+        }
+
+        .bg-gray {
+            background: var(--soft-gray);
         }
 
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 60px;
+            color: var(--dark-text);
         }
 
+        /* --- Ciekawostki Slider --- */
         .slider-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -175,6 +181,7 @@
             background: var(--soft-gray);
             border: 2px solid #eee;
             opacity: 0;
+            text-align: center;
         }
 
         .slide.active {
@@ -185,6 +192,105 @@
             font-size: 4rem;
             color: var(--primary-red);
             margin-bottom: 20px;
+        }
+
+        /* --- Sekcja Historia --- */
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .history-card {
+            background: var(--soft-gray);
+            padding: 30px;
+            border-left: 5px solid var(--primary-red);
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .history-card h3 {
+            color: var(--primary-red);
+            margin-bottom: 10px;
+        }
+
+        /* --- Sekcja Symbole --- */
+        .symbols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .symbol-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .symbol-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Flaga CSS */
+        .css-flag {
+            width: 150px;
+            height: 100px;
+            background: linear-gradient(to bottom, white 50%, var(--primary-red) 50%);
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 1px solid #ddd;
+        }
+
+        /* Szachownica Lotnicza CSS */
+        .css-szachownica {
+            width: 120px;
+            height: 120px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .sz-box { width: 100%; height: 100%; }
+        .sz-white { background: white; border: 5px solid var(--primary-red); }
+        .sz-red { background: var(--primary-red); border: 5px solid white; }
+
+        /* --- Sekcja Kontakt --- */
+        .contact-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--primary-red);
+        }
+
+        .contact-box i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .contact-box a {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-box a:hover {
+            color: var(--primary-red);
         }
 
         /* --- Suwaki Interaktywne --- */
@@ -199,28 +305,6 @@
             width: 300px;
             margin: 20px 0;
             accent-color: var(--primary-red);
-        }
-
-        /* --- Grid z informacjami --- */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 100px 50px;
-        }
-
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            border-bottom: 5px solid transparent;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-bottom: 5px solid var(--primary-red);
         }
 
         /* --- Stopka --- */
@@ -246,17 +330,17 @@
             color: var(--primary-red);
         }
 
-        /* --- Animacje --- */
+        /* --- Animacje i Responsywność --- */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-50px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- Responsywność --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            nav { padding: 20px; }
-            .nav-links { display: none; }
+            nav { padding: 20px; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .contact-box a { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -267,30 +351,86 @@
             <i class="fas fa-eagle"></i> JestemPatriotą
         </div>
         <ul class="nav-links">
-            <li><a href="#start">Start</a></li>
-            <li><a href="#ciekawostki">Ciekawostki</a></li>
-            <li><a href="#historia">Historia</a></li>
-            <li><a href="#symbole">Symbole</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="#start" onclick="scrollToSection('start')">Start</a></li>
+            <li><a href="#historia" onclick="scrollToSection('historia')">Historia</a></li>
+            <li><a href="#symbole" onclick="scrollToSection('symbole')">Symbole</a></li>
+            <li><a href="#ciekawostki" onclick="scrollToSection('ciekawostki')">Ciekawostki</a></li>
+            <li><a href="#kontakt" onclick="scrollToSection('kontakt')">Kontakt</a></li>
         </ul>
-        <button class="btn-main" style="padding: 10px 20px; font-size: 0.8rem;">Wspieraj</button>
     </nav>
 
     <section class="hero" id="start">
         <div class="flag-bar"></div>
         <h1>Polska to My</h1>
         <p>Odkryj piękno polskiej kultury, siłę naszej historii i dumę z bycia patriotą w XXI wieku.</p>
-        <button class="btn-main" onclick="scrollToSection('ciekawostki')">Rozpocznij Podróż</button>
+        <button class="btn-main" onclick="scrollToSection('historia')">Poznaj Historię</button>
     </section>
 
-    <section class="curiosities" id="ciekawostki">
+    <section class="content-section" id="historia">
+        <h2 class="section-title">Historia Polski</h2>
+        <div class="history-grid">
+            <div class="history-card">
+                <h3>966 r.</h3>
+                <strong>Chrzest Polski</strong>
+                <p>Mieszko I przyjmuje chrzest, wprowadzając Polskę w krąg kultury zachodnioeuropejskiej i chrześcijańskiej.</p>
+            </div>
+            <div class="history-card">
+                <h3>1569 r.</h3>
+                <strong>Unia Lubelska</strong>
+                <p>Powstaje Rzeczpospolita Obojga Narodów – jedno z największych i najpotężniejszych państw w Europie tamtych czasów.</p>
+            </div>
+            <div class="history-card">
+                <h3>1791 r.</h3>
+                <strong>Konstytucja 3 Maja</strong>
+                <p>Próba ratowania ojczyzny poprzez uchwalenie pierwszej w Europie nowoczesnej ustawy zasadniczej.</p>
+            </div>
+            <div class="history-card">
+                <h3>1918 r.</h3>
+                <strong>Odzyskanie Niepodległości</strong>
+                <p>Po 123 latach zaborów Polska wraca na mapy świata dzięki wysiłkowi całego narodu i wybitnych ojców niepodległości.</p>
+            </div>
+            <div class="history-card">
+                <h3>1989 r.</h3>
+                <strong>Narodziny Wolności</strong>
+                <p>Ruch "Solidarność" doprowadza do upadku komunizmu, otwierając drogę do wolnej, demokratycznej Polski.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section bg-gray" id="symbole">
+        <h2 class="section-title">Nasze Symbole</h2>
+        <div class="symbols-grid">
+            <div class="symbol-card">
+                <i class="fas fa-eagle" style="font-size: 6rem; color: var(--primary-red); margin-bottom: 20px;"></i>
+                <h3>Godło Polski</h3>
+                <p>Orzeł Biały w koronie na czerwonym tle. Legenda głosi, że założyciel państwa polskiego, Lech, ujrzał białego orła na tle zachodzącego słońca i postanowił założyć tam stolicę – Gniezno.</p>
+            </div>
+            <div class="symbol-card">
+                <div class="css-flag"></div>
+                <h3>Flaga Państwowa</h3>
+                <p>Biel i czerwień. Biel symbolizuje czystość, lojalność i pokorę. Czerwień to miłość, odwaga, waleczność i poświęcenie. Zostały oficjalnie uznane za barwy narodowe w 1831 roku.</p>
+            </div>
+            <div class="symbol-card">
+                <div class="css-szachownica">
+                    <div class="sz-box sz-white"></div>
+                    <div class="sz-box sz-red"></div>
+                    <div class="sz-box sz-red"></div>
+                    <div class="sz-box sz-white"></div>
+                </div>
+                <h3>Szachownica Lotnicza</h3>
+                <p>Znak rozpoznawczy Sił Powietrznych RP. Początkowo był to osobisty znak pilota Stefana Steca. Od 1918 roku jest dumnie noszony na polskich samolotach wojskowych.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="ciekawostki">
         <h2 class="section-title">Czy wiedziałeś, że...?</h2>
         <div class="slider-container">
             <div class="slide active">
                 <div class="slide-content">
-                    <i class="fas fa-monument"></i>
-                    <h3>Pierwsza Konstytucja</h3>
-                    <p>Polska Konstytucja 3 Maja była pierwszą w Europie i drugą na świecie nowoczesną ustawą zasadniczą.</p>
+                    <i class="fas fa-language"></i>
+                    <h3>Najtrudniejszy język?</h3>
+                    <p>Język polski jest często zaliczany do jednego z najtrudniejszych języków do nauki na świecie ze względu na skomplikowaną gramatykę i wymowę.</p>
                 </div>
             </div>
             <div class="slide">
@@ -302,9 +442,9 @@
             </div>
             <div class="slide">
                 <div class="slide-content">
-                    <i class="fas fa-mountain"></i>
-                    <h3>Pustynia w Polsce?</h3>
-                    <p>Pustynia Błędowska to największy w Polsce i jeden z największych w Europie obszarów lotnych piasków.</p>
+                    <i class="fas fa-tree"></i>
+                    <h3>Puszcza Białowieska</h3>
+                    <p>W Polsce znajduje się ostatni na niżu Europy las pierwotny, w którym żyje największa na świecie populacja żubra.</p>
                 </div>
             </div>
         </div>
@@ -321,21 +461,13 @@
         <h3 id="prideText">Czuję się solidnie! (50%)</h3>
     </section>
 
-    <section class="info-grid">
-        <div class="card">
-            <i class="fas fa-history" style="font-size: 2rem; color: var(--primary-red); margin-bottom: 20px;"></i>
-            <h3>Nasza Historia</h3>
-            <p>Ponad 1000 lat tradycji, od Mieszka I po czasy współczesne. Poznaj kluczowe momenty, które nas ukształtowały.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-paint-brush" style="font-size: 2rem; color: var(--primary-red); margin-bottom: 20px;"></i>
-            <h3>Kultura i Sztuka</h3>
-            <p>Od Chopina po Pendereckiego. Polska kultura to skarbnica talentów, która inspiruje cały świat.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-map-marked-alt" style="font-size: 2rem; color: var(--primary-red); margin-bottom: 20px;"></i>
-            <h3>Natura</h3>
-            <p>Bałtyk, Tatry, Mazury. Nasza ziemia oferuje różnorodność, której mogą nam pozazdrościć inni.</p>
+    <section class="content-section bg-gray" id="kontakt">
+        <h2 class="section-title">Skontaktuj się z nami</h2>
+        <div class="contact-box">
+            <i class="fas fa-envelope-open-text"></i>
+            <h3>Masz pytania lub pomysły na rozwój strony?</h3>
+            <p>Napisz do nas bezpośrednio na adres e-mail:</p>
+            <a href="mailto:jestempatriota.pll@gmail.com">jestempatriota.pll@gmail.com</a>
         </div>
     </section>
 
@@ -386,9 +518,18 @@
             else text.innerText = `Duma mnie rozpiera! 🇵🇱 (${val}%)`;
         }
 
-        // --- Płynne przewijanie ---
+        // --- Płynne przewijanie z poprawką dla nawigacji (offset) ---
         function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            event.preventDefault(); // Zapobiega domyślnemu skokowi linku
+            const element = document.getElementById(id);
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
         }
 
         // --- Efekt scrollowania Menu ---
