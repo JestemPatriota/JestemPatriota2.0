@@ -72,19 +72,8 @@
             position: relative;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-red);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--primary-red);
         }
 
         /* --- Sekcja Hero --- */
@@ -105,14 +94,6 @@
             font-size: 5rem;
             text-transform: uppercase;
             margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            font-weight: 300;
-            margin-bottom: 40px;
         }
 
         .flag-bar {
@@ -134,15 +115,14 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(220, 20, 60, 0.3);
         }
 
         .btn-main:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(220, 20, 60, 0.5);
+            box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
         }
 
-        /* --- Sekcje Treści --- */
+        /* --- Sekcje --- */
         .content-section {
             padding: 100px 50px;
             background: white;
@@ -156,10 +136,9 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 60px;
-            color: var(--dark-text);
         }
 
-        /* --- Sekcja Historia --- */
+        /* --- Historia --- */
         .history-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -173,15 +152,14 @@
             padding: 30px;
             border-left: 5px solid var(--primary-red);
             border-radius: 0 15px 15px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
-        /* --- Sekcja Symbole --- */
+        /* --- Symbole (Zaktualizowany układ na 2 elementy) --- */
         .symbols-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
@@ -192,40 +170,30 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .symbol-card:hover {
-            transform: translateY(-10px);
         }
 
         .symbol-img {
-            height: 120px;
+            height: 150px;
             width: auto;
             margin-bottom: 25px;
-            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
         }
 
-        /* Flaga CSS */
         .css-flag {
-            width: 150px;
-            height: 100px;
+            width: 200px;
+            height: 130px;
             background: linear-gradient(to bottom, white 50%, var(--primary-red) 50%);
             margin: 0 auto 25px;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-            border: 1px solid #ddd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            border: 1px solid #eee;
         }
 
-        /* --- Ciekawostki Slider --- */
+        /* --- Slider --- */
         .slider-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
-            border-radius: 20px;
-            height: 400px;
+            height: 350px;
         }
 
         .slide {
@@ -236,109 +204,65 @@
             align-items: center;
             justify-content: center;
             transition: 0.8s ease-in-out;
-            padding: 50px;
-            background: var(--soft-gray);
-            border: 2px solid #eee;
+            padding: 40px;
             opacity: 0;
             text-align: center;
         }
 
-        .slide.active {
-            opacity: 1;
-        }
+        .slide.active { opacity: 1; }
 
-        .slide-content i {
-            font-size: 4rem;
-            color: var(--primary-red);
-            margin-bottom: 20px;
-        }
-
-        /* --- Sekcja Kontakt --- */
+        /* --- Kontakt --- */
         .contact-box {
             max-width: 600px;
             margin: 0 auto;
+            text-align: center;
             background: white;
-            padding: 50px;
+            padding: 40px;
             border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-top: 5px solid var(--primary-red);
-        }
-
-        .contact-box a {
-            display: inline-block;
-            margin-top: 15px;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary-red);
-            text-decoration: none;
-        }
-
-        /* --- Suwaki Interaktywne --- */
-        .interactive-range {
-            padding: 80px 50px;
-            background: #222;
-            color: white;
-            text-align: center;
-        }
-
-        input[type=range] {
-            width: 300px;
-            margin: 20px 0;
-            accent-color: var(--primary-red);
         }
 
         /* --- Stopka --- */
         footer {
             background: #111;
             color: white;
-            padding: 50px 20px;
+            padding: 40px;
             text-align: center;
-        }
-
-        /* --- Animacje --- */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             nav { padding: 15px; flex-direction: column; }
-            .nav-links { gap: 15px; margin-top: 10px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">
-            <i class="fas fa-eagle"></i> JestemPatriotą
-        </div>
+        <div class="logo"><i class="fas fa-eagle"></i> JestemPatriotą</div>
         <ul class="nav-links">
-            <li><a href="#start" onclick="scrollToSection('start')">Start</a></li>
-            <li><a href="#historia" onclick="scrollToSection('historia')">Historia</a></li>
-            <li><a href="#symbole" onclick="scrollToSection('symbole')">Symbole</a></li>
-            <li><a href="#ciekawostki" onclick="scrollToSection('ciekawostki')">Ciekawostki</a></li>
-            <li><a href="#kontakt" onclick="scrollToSection('kontakt')">Kontakt</a></li>
+            <li><a href="#start">Start</a></li>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#symbole">Symbole</a></li>
+            <li><a href="#ciekawostki">Ciekawostki</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="start">
         <div class="flag-bar"></div>
         <h1>Polska to My</h1>
-        <p>Odkryj piękno polskiej kultury i siłę naszej historii.</p>
-        <button class="btn-main" onclick="scrollToSection('historia')">Poznaj Historię</button>
+        <p>Siła tradycji, duma z historii.</p>
+        <button class="btn-main" onclick="location.href='#historia'">Zaczynamy</button>
     </section>
 
     <section class="content-section" id="historia">
-        <h2 class="section-title">Historia Polski</h2>
+        <h2 class="section-title">Kluczowe Daty</h2>
         <div class="history-grid">
-            <div class="history-card"><h3>966 r.</h3><strong>Chrzest Polski</strong><p>Początek państwowości i wejście do kultury zachodniej.</p></div>
-            <div class="history-card"><h3>1410 r.</h3><strong>Grunwald</strong><p>Wielkie zwycięstwo nad Zakonem Krzyżackim.</p></div>
-            <div class="history-card"><h3>1791 r.</h3><strong>Konstytucja</strong><p>Pierwsza w Europie nowoczesna ustawa zasadnicza.</p></div>
-            <div class="history-card"><h3>1918 r.</h3><strong>Wolność</strong><p>Powrót Polski na mapy świata po 123 latach.</p></div>
-            <div class="history-card"><h3>1989 r.</h3><strong>Solidarność</strong><p>Upadek komunizmu i narodziny nowej demokracji.</p></div>
+            <div class="history-card"><h3>966 r.</h3><strong>Chrzest</strong><p>Początek państwa polskiego.</p></div>
+            <div class="history-card"><h3>1410 r.</h3><strong>Grunwald</strong><p>Wiktoria nad Krzyżakami.</p></div>
+            <div class="history-card"><h3>1791 r.</h3><strong>Konstytucja</strong><p>Duma oświecenia.</p></div>
+            <div class="history-card"><h3>1918 r.</h3><strong>Niepodległość</strong><p>Powrót po 123 latach.</p></div>
+            <div class="history-card"><h3>1989 r.</h3><strong>Wolność</strong><p>Nowy rozdział historii.</p></div>
         </div>
     </section>
 
@@ -346,108 +270,55 @@
         <h2 class="section-title">Symbole Narodowe</h2>
         <div class="symbols-grid">
             <div class="symbol-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/500px-Herb_Polski.svg.png" alt="Godło Polski" class="symbol-img">
-                <h3>Godło Polski</h3>
-                <p>Orzeł Biały w złotej koronie na czerwonym polu, zwrócony w prawo.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/500px-Herb_Polski.svg.png" alt="Godło" class="symbol-img">
+                <h3>Godło Rzeczypospolitej</h3>
+                <p>Orzeł Biały w koronie – symbol suwerenności i ciągłości państwa.</p>
             </div>
             <div class="symbol-card">
                 <div class="css-flag"></div>
-                <h3>Flaga Państwowa</h3>
-                <p>Biel symbolizuje czystość, czerwień krew przelaną za ojczyznę.</p>
-            </div>
-            <div class="symbol-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Polish_Air_Force_checkerboard.svg/512px-Polish_Air_Force_checkerboard.svg.png" alt="Szachownica Lotnicza" class="symbol-img">
-                <h3>Szachownica Lotnicza</h3>
-                <p>Znak rozpoznawczy Sił Powietrznych RP. Dumnie noszony na polskich skrzydłach.</p>
+                <h3>Barwy Narodowe</h3>
+                <p>Biel i czerwień – kolory nierozerwalnie związane z naszą tożsamością od wieków.</p>
             </div>
         </div>
     </section>
 
     <section class="content-section" id="ciekawostki">
-        <h2 class="section-title">Czy wiedziałeś, że...?</h2>
+        <h2 class="section-title">Czy wiedziałeś?</h2>
         <div class="slider-container">
             <div class="slide active">
-                <div class="slide-content">
-                    <i class="fas fa-language"></i>
-                    <h3>Najtrudniejszy język?</h3>
-                    <p>Polszczyzna jest uważana za jeden z najtrudniejszych języków świata przez skomplikowaną deklinację i wymowę.</p>
-                </div>
+                <div><i class="fas fa-language fa-3x" style="color:var(--primary-red)"></i><br><br><h3>Język Polski</h3><p>Uznawany za jeden z najtrudniejszych na świecie.</p></div>
             </div>
             <div class="slide">
-                <div class="slide-content">
-                    <i class="fas fa-microscope"></i>
-                    <h3>Nobliści</h3>
-                    <p>Maria Skłodowska-Curie to jedyna osoba na świecie, która dostała dwa Noble w dwóch różnych naukach przyrodniczych.</p>
-                </div>
+                <div><i class="fas fa-flask fa-3x" style="color:var(--primary-red)"></i><br><br><h3>Nobliści</h3><p>Polska ma jedną z największych liczb noblistów w regionie.</p></div>
             </div>
             <div class="slide">
-                <div class="slide-content">
-                    <i class="fas fa-mountain"></i>
-                    <h3>Pustynia w Polsce?</h3>
-                    <p>Pustynia Błędowska to największy w Europie Środkowej obszar lotnych piasków, zwana "Polską Saharą".</p>
-                </div>
+                <div><i class="fas fa-tree fa-3x" style="color:var(--primary-red)"></i><br><br><h3>Przyroda</h3><p>Puszcza Białowieska to ostatni taki las pierwotny w Europie.</p></div>
             </div>
         </div>
-        <div style="text-align:center; margin-top: 20px;">
-            <button class="btn-main" onclick="prevSlide()" style="padding: 10px 20px;"><i class="fas fa-chevron-left"></i></button>
-            <button class="btn-main" onclick="nextSlide()" style="padding: 10px 20px;"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-
-    <section class="interactive-range">
-        <h2>Jak bardzo czujesz się dziś dumny?</h2>
-        <input type="range" min="0" max="100" value="50" id="prideRange" oninput="updatePride(this.value)">
-        <h3 id="prideText">Czuję się solidnie! (50%)</h3>
     </section>
 
     <section class="content-section bg-gray" id="kontakt">
-        <h2 class="section-title">Kontakt</h2>
         <div class="contact-box">
-            <i class="fas fa-envelope-open-text" style="font-size: 3rem; color: var(--primary-red); margin-bottom: 20px;"></i>
-            <h3>Masz pytania? Napisz do nas!</h3>
-            <a href="mailto:jestempatriota.pll@gmail.com">jestempatriota.pll@gmail.com</a>
+            <h3>Kontakt</h3>
+            <p>Masz pytania? Napisz do nas:</p>
+            <a href="mailto:jestempatriota.pll@gmail.com" style="color:var(--primary-red); font-weight:bold; font-size:1.2rem; text-decoration:none;">jestempatriota.pll@gmail.com</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Projekt "JestemPatriotą". Chwała Bohaterom!</p>
+        <p>&copy; 2026 Projekt "JestemPatriotą".</p>
     </footer>
 
     <script>
-        // Slider - ZMIENIONO NA 15 SEKUND (15000 ms)
-        let currentSlide = 0;
+        // Slider - 15 sekund
+        let current = 0;
         const slides = document.querySelectorAll('.slide');
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            if (index >= slides.length) currentSlide = 0;
-            if (index < 0) currentSlide = slides.length - 1;
-            slides[currentSlide].classList.add('active');
+        function next() {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
         }
-
-        function nextSlide() { currentSlide++; showSlide(currentSlide); }
-        function prevSlide() { currentSlide--; showSlide(currentSlide); }
-        
-        setInterval(nextSlide, 15000); // 15 sekund na przeczytanie
-
-        // Suwak dumy
-        function updatePride(val) {
-            const text = document.getElementById('prideText');
-            if(val < 30) text.innerText = `Budzę w sobie siłę! (${val}%)`;
-            else if(val < 70) text.innerText = `Czuję się solidnie! (${val}%)`;
-            else text.innerText = `Duma mnie rozpiera! 🇵🇱 (${val}%)`;
-        }
-
-        // Przewijanie
-        function scrollToSection(id) {
-            event.preventDefault();
-            const element = document.getElementById(id);
-            const navHeight = document.querySelector('nav').offsetHeight;
-            window.scrollTo({
-                top: element.offsetTop - navHeight,
-                behavior: "smooth"
-            });
-        }
+        setInterval(next, 15000);
     </script>
 </body>
 </html>
