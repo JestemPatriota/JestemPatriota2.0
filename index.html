@@ -232,6 +232,9 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .symbol-card:hover {
@@ -248,7 +251,7 @@
             border: 1px solid #ddd;
         }
 
-        /* Szachownica Lotnicza CSS */
+        /* Szachownica Lotnicza CSS - Poprawiona */
         .css-szachownica {
             width: 120px;
             height: 120px;
@@ -401,9 +404,9 @@
         <h2 class="section-title">Nasze Symbole</h2>
         <div class="symbols-grid">
             <div class="symbol-card">
-                <i class="fas fa-eagle" style="font-size: 6rem; color: var(--primary-red); margin-bottom: 20px;"></i>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Herb_Polski.svg/500px-Herb_Polski.svg.png" alt="Godło Polski" style="height: 120px; width: auto; margin-bottom: 20px;">
                 <h3>Godło Polski</h3>
-                <p>Orzeł Biały w koronie na czerwonym tle. Legenda głosi, że założyciel państwa polskiego, Lech, ujrzał białego orła na tle zachodzącego słońca i postanowił założyć tam stolicę – Gniezno.</p>
+                <p>Orzeł Biały w koronie na czerwonym tle. Zgodnie z legendą, założyciel państwa polskiego, Lech, ujrzał białego orła na tle zachodzącego słońca i postanowił założyć tam stolicę – Gniezno.</p>
             </div>
             <div class="symbol-card">
                 <div class="css-flag"></div>
@@ -412,13 +415,13 @@
             </div>
             <div class="symbol-card">
                 <div class="css-szachownica">
-                    <div class="sz-box sz-white"></div>
-                    <div class="sz-box sz-red"></div>
                     <div class="sz-box sz-red"></div>
                     <div class="sz-box sz-white"></div>
+                    <div class="sz-box sz-white"></div>
+                    <div class="sz-box sz-red"></div>
                 </div>
                 <h3>Szachownica Lotnicza</h3>
-                <p>Znak rozpoznawczy Sił Powietrznych RP. Początkowo był to osobisty znak pilota Stefana Steca. Od 1918 roku jest dumnie noszony na polskich samolotach wojskowych.</p>
+                <p>Znak rozpoznawczy Sił Powietrznych RP. Początkowo osobisty znak pilota Stefana Steca. W 1993 roku zmieniono układ barw (obrócono o 90 stopni), by zgadzał się z zasadami heraldyki.</p>
             </div>
         </div>
     </section>
@@ -430,21 +433,21 @@
                 <div class="slide-content">
                     <i class="fas fa-language"></i>
                     <h3>Najtrudniejszy język?</h3>
-                    <p>Język polski jest często zaliczany do jednego z najtrudniejszych języków do nauki na świecie ze względu na skomplikowaną gramatykę i wymowę.</p>
+                    <p>Język polski jest często zaliczany do jednego z najtrudniejszych języków do nauki na świecie ze względu na skomplikowaną gramatykę, przypadki i wymowę.</p>
                 </div>
             </div>
             <div class="slide">
                 <div class="slide-content">
                     <i class="fas fa-microscope"></i>
                     <h3>Nobliści</h3>
-                    <p>Maria Skłodowska-Curie jest jedyną kobietą, która otrzymała Nagrodę Nobla dwa razy w różnych dziedzinach nauki.</p>
+                    <p>Maria Skłodowska-Curie jest jedyną kobietą, która otrzymała Nagrodę Nobla dwa razy, i jedynym człowiekiem, który otrzymał ją w dwóch różnych dziedzinach nauk przyrodniczych.</p>
                 </div>
             </div>
             <div class="slide">
                 <div class="slide-content">
                     <i class="fas fa-tree"></i>
                     <h3>Puszcza Białowieska</h3>
-                    <p>W Polsce znajduje się ostatni na niżu Europy las pierwotny, w którym żyje największa na świecie populacja żubra.</p>
+                    <p>W Polsce znajduje się ostatni na niżu Europy las pierwotny, w którym żyje największa na świecie populacja żubra - króla puszczy.</p>
                 </div>
             </div>
         </div>
@@ -507,8 +510,8 @@
             showSlide(currentSlide);
         }
 
-        // --- Automatyczny slider co 5 sekund ---
-        setInterval(nextSlide, 5000);
+        // --- Automatyczny slider co 12 sekund (zmieniono z 5 sekund) ---
+        setInterval(nextSlide, 12000);
 
         // --- Obsługa suwaka dumy ---
         function updatePride(val) {
