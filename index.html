@@ -1,1 +1,549 @@
-<iframe src="https://gamma.app/embed/xepjgrroytn6sdo" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="Jestem Patriotą"></iframe>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jestem Patriotą - Duma, Historia i Tradycja Polski</title>
+    <meta name="description" content="Interaktywne kompendium wiedzy o Polsce: symbole narodowe, dzieje oręża, historia, polska kuchnia oraz test wiedzy patriotycznej.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+
+    <!-- Sticky Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="images/godlo.svg" alt="Godło Polski" class="eagle-icon-svg">
+                <span>JESTEM <strong>PATRIOTĄ</strong></span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#symbole" class="nav-link">Symbole</a>
+                <a href="#historia" class="nav-link">Historia</a>
+                <a href="#wojsko" class="nav-link">Wojsko</a>
+                <a href="#kuchnia" class="nav-link">Kuchnia</a>
+                <a href="#quiz" class="nav-link nav-cta">Sprawdź Wiedzę</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Otwórz menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span> Polska Duma • Historia • Tradycja
+            </div>
+            <h1 class="hero-title">JESTEM PATRIOTĄ</h1>
+            <p class="hero-subtitle">
+                „Naród, który nie zna swej przeszłości, nie zasługuje na rozwój ani na przyszłość.”
+                <span class="hero-author">— Józef Piłsudski</span>
+            </p>
+            <div class="hero-buttons">
+                <a href="#symbole" class="btn btn-primary">
+                    <span>Poznaj Polskę</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                </a>
+                <a href="#quiz" class="btn btn-secondary">
+                    <span>Sprawdź wiedzę w Quizie</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#symbole" aria-label="Przewiń w dół">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section 1: Symbole Narodowe -->
+    <section class="section section-symbols" id="symbole">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Fundamenty Rzeczypospolitej</span>
+                <h2 class="section-title">Symbole Narodowe</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Znaki naszej tożsamości, wolności i tysiącletniej historii. Poznaj głębokie znaczenie symboli państwowych Polski.</p>
+            </div>
+
+            <div class="symbols-grid">
+                <!-- Card 1: Godło -->
+                <article class="symbol-card">
+                    <div class="symbol-image-wrapper vector-bg">
+                        <img src="images/godlo.svg" alt="Godło Rzeczypospolitej" class="symbol-img symbol-contain">
+                        <div class="symbol-badge">Godło</div>
+                    </div>
+                    <div class="symbol-card-body">
+                        <h3 class="symbol-title">Godło Rzeczypospolitej</h3>
+                        <p class="symbol-text">Orzeł Biały w złotej koronie na czerwonym polu – majestatyczny symbol potęgi, niezłomności oraz państwowości od czasów Piastów.</p>
+                        <button class="btn btn-card" data-modal="modal-godlo">Dowiedz się więcej</button>
+                    </div>
+                </article>
+
+                <!-- Card 2: Flaga -->
+                <article class="symbol-card">
+                    <div class="symbol-image-wrapper vector-bg">
+                        <img src="images/flaga.svg" alt="Flaga Polski" class="symbol-img symbol-contain flag-border">
+                        <div class="symbol-badge">Barwy Narodowe</div>
+                    </div>
+                    <div class="symbol-card-body">
+                        <h3 class="symbol-title">Flaga Rzeczypospolitej</h3>
+                        <p class="symbol-text">Biel symbolizuje czystość, szlachetność i pokój, a czerwień majestat, ogień oraz krew przelaną za wolność naszej Ojczyzny.</p>
+                        <button class="btn btn-card" data-modal="modal-flaga">Dowiedz się więcej</button>
+                    </div>
+                </article>
+
+                <!-- Card 3: Hymn -->
+                <article class="symbol-card">
+                    <div class="symbol-image-wrapper">
+                        <img src="images/hymn.jpg" alt="Mazurek Dąbrowskiego - Nuty i Historia" class="symbol-img symbol-cover">
+                        <div class="symbol-badge">Pieśń Narodowa</div>
+                    </div>
+                    <div class="symbol-card-body">
+                        <h3 class="symbol-title">Mazurek Dąbrowskiego</h3>
+                        <p class="symbol-text">Napisana w 1797 roku we Włoszech przez Józefa Wybickiego. Pieśń, która dawała nadzieję w czasach zaborów i zjednoczyła naród.</p>
+                        <button class="btn btn-card" data-modal="modal-hymn">Dowiedz się więcej</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Oś Czasu Historii Polski -->
+    <section class="section section-timeline" id="historia">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tysiąc Lat Dziejów</span>
+                <h2 class="section-title">Kluczowe Karty Historii</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Przeżyj ponownie epokowe wydarzenia, które ukształtowały Polskę od jej zarania po współczesność.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Event 1 -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">966 ROK</div>
+                        <h3 class="timeline-title">Chrzest Polski</h3>
+                        <p>Książę Mieszko I przyjmuje chrzest. Wydarzenie to uważa się za symboliczny początek państwa polskiego oraz wejście w krąg kultury europejskiej.</p>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">15 LIPCA 1410</div>
+                        <h3 class="timeline-title">Bitwa pod Grunwaldem</h3>
+                        <p>Połączone siły polsko-litewskie pod dowództwem króla Władysława Jagiełły rozgramiają Zakon Krzyżacki w jednej z największych bitew średniowiecznej Europy.</p>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">12 WRZEŚNIA 1683</div>
+                        <h3 class="timeline-title">Odsiecz Wiedeńska</h3>
+                        <p>Król Jan III Sobieski na czele polskiej Husarii powstrzymuje nawałę osmańską pod Wiedniem, ratując chrześcijańską Europę przed podbojem.</p>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">3 MAJA 1791</div>
+                        <h3 class="timeline-title">Konstytucja 3 Maja</h3>
+                        <p>Uchwalenie pierwszej w Europie i drugiej na świecie nowoczesnej ustawy zasadniczej. Triumf myśli politycznej i dążenia do naprawy Rzeczypospolitej.</p>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">11 LISTOPADA 1918</div>
+                        <h3 class="timeline-title">Odzyskanie Niepodległości</h3>
+                        <p>Po 123 latach niewoli pod zaborami Polska powraca na mapę świata dzięki determinacji bohaterów takich jak Józef Piłsudski czy Roman Dmowski.</p>
+                    </div>
+                </div>
+
+                <!-- Event 6 -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1 SIERPNIA 1944</div>
+                        <h3 class="timeline-title">Powstanie Warszawskie</h3>
+                        <p>Bohaterstwo mieszkańców stolicy i Żołnierzy Armii Krajowej w trwającym 63 dni zrywie wolnościowym przeciwko niemieckiemu okupantowi.</p>
+                    </div>
+                </div>
+
+                <!-- Event 7 -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1980 ROK</div>
+                        <h3 class="timeline-title">Narodziny "Solidarności"</h3>
+                        <p>Masowy ruch społeczny na czele z NSZZ "Solidarność", który doprowadził do obalenia komunizmu w Polsce i zapoczątkował zmiany w całej Europie Środkowo-Wschodniej.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Wojsko Polskie (Military Pride & JS Tab Switcher) -->
+    <section class="section section-military" id="wojsko">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Oręż i Honor</span>
+                <h2 class="section-title">Wojsko Polskie: Tradycja i Nowoczesność</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Od niezwyciężonej Skrzydlatej Husarii po najnowocześniejsze jednostki Wojska Polskiego XXI wieku.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="tab-switcher">
+                <button class="tab-btn active" data-tab="tab-husaria">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15 8L22 9L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9L9 8L12 2Z"/></svg>
+                    Historia (Husaria)
+                </button>
+                <button class="tab-btn" data-tab="tab-modern">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    Nowoczesność (Współczesna Armia)
+                </button>
+            </div>
+
+            <!-- Tab Content 1: Husaria -->
+            <div class="tab-content active" id="tab-husaria">
+                <div class="military-grid">
+                    <div class="military-media">
+                        <img src="images/husaria.jpg" alt="Husaria Skrzydlata" class="military-img">
+                        <div class="military-caption">
+                            <h4>Skrzydlaci Rycerze</h4>
+                            <p>Elita polskiej jazdy w XVI-XVIII wieku</p>
+                        </div>
+                    </div>
+                    <div class="military-info">
+                        <h3 class="military-heading">Duma Rzeczypospolitej Obojga Narodów</h3>
+                        <p class="military-paragraph">Husaria to najskuteczniejsza jazda w historii wojskowości. Przez ponad sto lat nie poniosła żadnej znaczącej porażki na polu bitwy, wzbudzając trwogę w sercach wrogów od Bałtyku po Morze Czarne.</p>
+                        
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <div class="feature-icon">⚔️</div>
+                                <div>
+                                    <h5>Długa Kopia Husarska</h5>
+                                    <p>Broń o długości dochodzącej do 5.5 metra, dająca Husarzom przewagę zasięgu nad każdą piechotą z pikami.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🦅</div>
+                                <div>
+                                    <h5>Słynne Skrzydła</h5>
+                                    <p>Mocowane do siodła lub zbroi skrzydła z orlich piór wydawały charakterystyczny szum i straszyły konie wroga.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🛡️</div>
+                                <div>
+                                    <h5>Legendarne Zwycięstwa</h5>
+                                    <p>Triumfy pod Kircholmem (1605), Kłuszynem (1610) i Wiedniem (1683) przeszły do historii wojskowości świata.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content 2: Modern Army -->
+            <div class="tab-content" id="tab-modern">
+                <div class="military-grid">
+                    <div class="military-media">
+                        <img src="images/wojsko.jpg" alt="Współczesne Wojsko Polskie" class="military-img">
+                        <div class="military-caption">
+                            <h4>Wojsko Polskie XXI Wieku</h4>
+                            <p>Sojusznik NATO i nowoczesna obronność</p>
+                        </div>
+                    </div>
+                    <div class="military-info">
+                        <h3 class="military-heading">Nowoczesny Filar Bezpieczeństwa NATO</h3>
+                        <p class="military-paragraph">Współczesne Siły Zbrojne RP to jedna z najszybciej rozwijających się i najnowocześniejszych armii w Europie. Łączy zaawansowaną technologię z patriotycznym dziedzictwem poprzednich pokoleń.</p>
+
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <div class="feature-icon">🪖</div>
+                                <div>
+                                    <h5>Jednostki Specjalne (JW GROM, Formoza)</h5>
+                                    <p>Światowa czołówka sił specjalnych, ceniona przez sojuszników za profesjonalizm i skuteczność bojową.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">✈️</div>
+                                <div>
+                                    <h5>Lotnictwo i F-35 "Husarz"</h5>
+                                    <p>Wprowadzenie myśliwców 5. generacji F-35 Husarz oraz nowoczesnych śmigłowców bojowych Apache.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🚀</div>
+                                <div>
+                                    <h5>Wojska Lądowe i Artyleria</h5>
+                                    <p>Czołgi Abrams, K2 Black Panther oraz polskie samobieżne armatohaubice AHS Krab i wyrzutnie HIMARS.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Kuchnia Polska -->
+    <section class="section section-cuisine" id="kuchnia">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tradycja na Talerzu</span>
+                <h2 class="section-title">Smaki Polski</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Polska kuchnia to bogactwo aromatów, staropolskiej gościnności i tradycji przekazywanej z pokolenia na pokolenie. Kliknij potrawę, by poznać jej historię!</p>
+            </div>
+
+            <div class="cuisine-grid">
+                <!-- Dish 1 -->
+                <div class="cuisine-card" data-dish="pierogi">
+                    <div class="cuisine-img-box">
+                        <img src="images/pierogi.jpg" alt="Pierogi" class="cuisine-img">
+                        <div class="cuisine-overlay">
+                            <span>Odkryj tajemnicę</span>
+                        </div>
+                    </div>
+                    <div class="cuisine-info">
+                        <h3>Tradycyjne Pierogi</h3>
+                        <p>Z mięsem, kapustą i grzybami lub ruskie – duma polskiego stołu.</p>
+                    </div>
+                </div>
+
+                <!-- Dish 2 -->
+                <div class="cuisine-card" data-dish="zurek">
+                    <div class="cuisine-img-box">
+                        <img src="images/zurek.jpg" alt="Żurek" class="cuisine-img">
+                        <div class="cuisine-overlay">
+                            <span>Odkryj tajemnicę</span>
+                        </div>
+                    </div>
+                    <div class="cuisine-info">
+                        <h3>Żur Staropolski</h3>
+                        <p>Aromatyczna zupa na zakwasie żytnim z białą kiełbasą i jajkiem.</p>
+                    </div>
+                </div>
+
+                <!-- Dish 3 -->
+                <div class="cuisine-card" data-dish="bigos">
+                    <div class="cuisine-img-box">
+                        <img src="images/bigos.jpg" alt="Bigos" class="cuisine-img">
+                        <div class="cuisine-overlay">
+                            <span>Odkryj tajemnicę</span>
+                        </div>
+                    </div>
+                    <div class="cuisine-info">
+                        <h3>Bigos Staropolski</h3>
+                        <p>Królewskie danie z kiszonej kapusty, szlachetnych mięs i suszonych grzybów.</p>
+                    </div>
+                </div>
+
+                <!-- Dish 4 -->
+                <div class="cuisine-card" data-dish="schabowy">
+                    <div class="cuisine-img-box">
+                        <img src="images/schabowy.jpg" alt="Kotlet Schabowy" class="cuisine-img">
+                        <div class="cuisine-overlay">
+                            <span>Odkryj tajemnicę</span>
+                        </div>
+                    </div>
+                    <div class="cuisine-info">
+                        <h3>Kotlet Schabowy</h3>
+                        <p>Klasyk niedzielnego obiadu podawany z ziemniakami i zasmażaną kapustą.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Interactive Quiz Patriotyczny -->
+    <section class="section section-quiz" id="quiz">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Sprawdzian Wiedzy</span>
+                <h2 class="section-title">Wielki Quiz Patriotyczny</h2>
+                <div class="section-divider"></div>
+                <p class="section-desc">Testuj swoją wiedzę o historii, symbolach i geografii Polski. Zdobądź tytuł Mistrza Rzeczypospolitej!</p>
+            </div>
+
+            <div class="quiz-card">
+                <!-- Progress Header -->
+                <div class="quiz-header" id="quiz-header">
+                    <div class="quiz-progress-text">
+                        Pytanie <span id="current-q-num">1</span> z <span id="total-q-num">5</span>
+                    </div>
+                    <div class="quiz-score-badge">
+                        Wynik: <span id="live-score">0</span> pkt
+                    </div>
+                </div>
+                
+                <div class="quiz-progress-bar-bg">
+                    <div class="quiz-progress-bar-fill" id="quiz-progress-bar"></div>
+                </div>
+
+                <!-- Active Question Box -->
+                <div class="quiz-body" id="quiz-body">
+                    <h3 class="quiz-question" id="quiz-question-text">Ładowanie pytania...</h3>
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Rendered by JS -->
+                    </div>
+                    <div class="quiz-feedback" id="quiz-feedback"></div>
+                    <div class="quiz-actions">
+                        <button class="btn btn-primary" id="quiz-next-btn" disabled>Następne pytanie →</button>
+                    </div>
+                </div>
+
+                <!-- Result Screen (Hidden by default) -->
+                <div class="quiz-result hidden" id="quiz-result">
+                    <div class="result-icon" id="result-icon">🏆</div>
+                    <h3 class="result-title" id="result-title">Gratulacje!</h3>
+                    <p class="result-badge-text" id="result-rank">Młody Adept</p>
+                    <p class="result-score-text">Twój wynik: <strong id="final-score">0/5</strong> punktów (<span id="final-percent">0%</span>)</p>
+                    <p class="result-desc" id="result-desc">Świetny wynik! Posiadasz piękną wiedzę o naszej Ojczyźnie.</p>
+                    <button class="btn btn-primary" id="quiz-restart-btn">Zagraj ponownie 🔄</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#hero" class="nav-logo">
+                    <img src="images/godlo.svg" alt="Godło Polski" class="eagle-icon-svg">
+                    <span>JESTEM <strong>PATRIOTĄ</strong></span>
+                </a>
+                <p>Projekt dedykowany popularyzacji historii, tożsamości i kultury Rzeczypospolitej Polskiej.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Nawigacja</h4>
+                <ul>
+                    <li><a href="#symbole">Symbole Narodowe</a></li>
+                    <li><a href="#historia">Oś Czasu</a></li>
+                    <li><a href="#wojsko">Wojsko Polskie</a></li>
+                    <li><a href="#kuchnia">Smaki Polski</a></li>
+                    <li><a href="#quiz">Quiz Patriotyczny</a></li>
+                </ul>
+            </div>
+            <div class="footer-quote">
+                <h4>Pamięć i Tożsamość</h4>
+                <p>„Polska to wielka rzecz.” — Stanisław Wyspiański</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Jestem Patriotą. Wszelkie prawa zastrzeżone. Chwała Bohaterom!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals for Symbol Details -->
+    <dialog class="modal-dialog" id="modal-godlo">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Zamknij">&times;</button>
+            <div class="modal-header">
+                <span class="modal-tag">Symbol Państwowy</span>
+                <h2>Godło Rzeczypospolitej Polskiej</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-container vector-modal-bg">
+                    <img src="images/godlo.svg" alt="Godło Polski" class="modal-img modal-contain">
+                </div>
+                <p>Godłem Rzeczypospolitej Polskiej jest wizerunek Orła Białego w koronie, z głową zwróconą w prawo, ze złotym dziobem i szponami, umieszczony w czerwonym polu tarczy.</p>
+                <h4>Rys Historyczny</h4>
+                <p>Wizerunek orła jako symbolu władców pojawił się już na denarach Bolesława Chrobrego. Jako oficjalny herb państwowy został przyjęty w 1295 roku przez króla Przemysła II podczas jego koronacji w Gnieźnie.</p>
+                <h4>Zasady Szacunku</h4>
+                <p>Godło podlega ochronie prawnej. Wykorzystywane jest w urzędach państwowych, szkołach, na paszportach oraz monetach. Szacunek dla Godła jest obowiązkiem każdego obywatela.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="modal-dialog" id="modal-flaga">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Zamknij">&times;</button>
+            <div class="modal-header">
+                <span class="modal-tag">Barwy Narodowe</span>
+                <h2>Flaga Rzeczypospolitej Polskiej</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-container vector-modal-bg">
+                    <img src="images/flaga.svg" alt="Flaga Polski" class="modal-img modal-contain flag-border">
+                </div>
+                <p>Barwy Rzeczypospolitej Polskiej stanowią prostokątne płaty tkaniny o barwach białej i czerwonej, układające się w dwa poziome pasy równej szerokości.</p>
+                <h4>Geneza Barw</h4>
+                <p>Pochodzą od herbu Królestwa Polskiego: biel odzwierciedla Orła Białego, a czerwień tło tarczy herbowej. Oficjalnie barwy narodowe uregulowano uchwałą Sejmu Królestwa Polskiego w 1831 roku podczas Powstania Listopadowego.</p>
+                <h4>Dzień Flagi</h4>
+                <p>Od 2004 roku 2 maja obchodzony jest jako Dzień Flagi Rzeczypospolitej Polskiej. Tego dnia Polacy z dumą wywieszają flagi w okach i na domach.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="modal-dialog" id="modal-hymn">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Zamknij">&times;</button>
+            <div class="modal-header">
+                <span class="modal-tag">Pieśń Reprezentacyjna</span>
+                <h2>Mazurek Dąbrowskiego</h2>
+            </div>
+            <div class="modal-body">
+                <img src="images/hymn.jpg" alt="Hymn Polski" class="modal-img modal-cover">
+                <p>Polski hymn państwowy powstał w dniach 16–19 lipca 1797 roku w mieście Reggio nell'Emilia we Włoszech jako „Pieśń Legionów Polskich we Włoszech”.</p>
+                <h4>Tekst I Zwrotki i Refrenu</h4>
+                <div class="hymn-lyrics">
+                    <p><em>Jeszcze Polska nie zginęła,<br>Kiedy my żyjemy.<br>Co nam obca przemoc wzięła,<br>Szablą odbierzemy.</em></p>
+                    <p class="refrain"><strong>Marsz, marsz, Dąbrowski,<br>Z ziemi włoskiej do Polski.<br>Za twoim przewodem<br>Złączym się z narodem.</strong></p>
+                </div>
+                <h4>Znaczenie Historyczne</h4>
+                <p>Mazurek Dąbrowskiego zjednoczył serca Polaków walczących o wolność we wszystkich zrywach niepodległościowych XIX i XX wieku. W 1927 roku stał się oficjalnym hymnem państwowym.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Dynamic Modal for Cuisine Details -->
+    <dialog class="modal-dialog" id="cuisine-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Zamknij">&times;</button>
+            <div class="modal-header">
+                <span class="modal-tag" id="cuisine-modal-tag">Smak Tradycji</span>
+                <h2 id="cuisine-modal-title">Nazwa Potrawy</h2>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Potrawa" class="modal-img modal-cover" id="cuisine-modal-img">
+                <p id="cuisine-modal-desc">Opis potrawy...</p>
+                <h4>Ciekawostka Kulinarna</h4>
+                <p id="cuisine-modal-fact">Ciekawostka...</p>
+                <h4>Tradycyjny Składnik</h4>
+                <p id="cuisine-modal-ingredient">Składnik...</p>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Main JavaScript Application -->
+    <script src="app.js"></script>
+</body>
+</html>
